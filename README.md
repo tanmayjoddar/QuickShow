@@ -2,7 +2,7 @@
 
 # QUICKSHOW 🎬🍿🎥
 
-*Seamless Video Discovery. Effortless Entertainment Experience*
+_Seamless Video Discovery. Effortless Entertainment Experience_
 
 ![Last Commit](https://img.shields.io/badge/last%20commit-today-brightgreen)
 ![JavaScript](https://img.shields.io/badge/javascript-98.8%25-yellow)
@@ -25,7 +25,7 @@
 <br />
 
 ## 🎦 LIVE - DEMO 🌐
-  
+
 **UI** 👉 [LINK](https://quickshow-sigma-roan.vercel.app/)
 
 ![alt text](screencapture-quickshow-sigma-roan-vercel-app-2025-07-04-07_02_38.png)
@@ -87,56 +87,61 @@ Before running this application, make sure you have the following installed:
 ### Installation
 
 1. **Clone the repository**
+
    ```console
    git clone https://github.com/elyse502/QuickShow.git
    cd QuickShow
    ```
 
 2. **Install server dependencies**
+
    ```console
    cd server
    npm install
    ```
 
 3. **Install client dependencies**
+
    ```console
    cd ../client
    npm install
    ```
 
 4. **Environment Configuration**
-   
+
    Create `.env` files in both `server` and `client` directories:
-   
+
    **Server (.env)**
+
    ```env
    # 🌐 Database
    MONGODB_URI=mongodb://localhost:27017/quickshow
-    
+
    # 🔐 Clerk Authentication
    CLERK_PUBLISHABLE_KEY=your-clerk-publishable-key
    CLERK_SECRET_KEY=your-clerk-secret-key
-    
+
    # ⚙️ Inngest Event Scheduling
    INNGEST_EVENT_KEY=your-inngest-event-key
    INNGEST_SIGNING_KEY=your-inngest-signing-key
-    
+
    # 🎬 TMDB API (for movie data)
    TMDB_API_KEY=your-tmdb-api-key
-    
+
    # 💳 Stripe Payment Integration
    STRIPE_PUBLISHABLE_KEY=your-stripe-publishable-key
    STRIPE_SECRET_KEY=your-stripe-secret-key
    STRIPE_WEBHOOK_SECRET=your-stripe-webhook-secret
-    
+
    # 📧 Email Notifications (Nodemailer or similar SMTP setup)
    SENDER_EMAIL=your-sender@example.com
    SMTP_USER=your-smtp-username
    SMTP_PASS=your-smtp-password
 
    ```
-   
+
    **Client (.env)**
+
    ```env
    # 💱 Currency Symbol
    VITE_CURRENCY=$
@@ -155,20 +160,23 @@ Before running this application, make sure you have the following installed:
 ### Usage
 
 1. **Start the development servers**
-   
+
    **Terminal 1 - Server**
+
    ```console
    cd server
    npm run dev
    ```
-   
+
    **Terminal 2 - Client**
+
    ```console
    cd client
    npm run dev
    ```
 
 2. **Access the application**
+
    - Frontend: `http://localhost:5173`
    - Backend API: `http://localhost:5000`
 
@@ -193,6 +201,7 @@ npm run test
 ## Features
 
 ### User Features
+
 - **Authentication**: Secure user registration and login
 - **Movie Browsing**: Search and filter movies by genre, rating, and release date
 - **Movie Details**: View comprehensive movie information, trailers, and reviews
@@ -202,6 +211,7 @@ npm run test
 - **Payment Processing**: Secure checkout with Stripe integration
 
 ### Admin Features
+
 - **Dashboard Analytics**: Comprehensive booking and revenue analytics
 - **Show Management**: Add, edit, and remove movie shows
 - **Booking Overview**: View and manage all user bookings
@@ -209,6 +219,7 @@ npm run test
 - **Theater Management**: Configure theater layouts and seat arrangements
 
 ### Technical Features
+
 - **Responsive Design**: Mobile-first approach with Tailwind CSS
 - **Real-time Updates**: Live seat availability updates
 - **Image Optimization**: Cloudinary integration for media management
@@ -251,12 +262,14 @@ quickshow/
 ## API Documentation
 
 ### Authentication Endpoints
+
 - `POST /api/users/register` - User registration
 - `POST /api/users/login` - User login
 - `GET /api/users/profile` - Get user profile
 - `PUT /api/users/profile` - Update user profile
 
 ### Movie & Show Endpoints
+
 - `GET /api/shows` - Get all shows
 - `GET /api/shows/:id` - Get show details
 - `POST /api/admin/shows` - Create new show (Admin)
@@ -264,12 +277,14 @@ quickshow/
 - `DELETE /api/admin/shows/:id` - Delete show (Admin)
 
 ### Booking Endpoints
+
 - `POST /api/bookings` - Create new booking
 - `GET /api/bookings/user` - Get user bookings
 - `GET /api/admin/bookings` - Get all bookings (Admin)
 - `PUT /api/bookings/:id` - Update booking status
 
 ### Payment Endpoints
+
 - `POST /api/bookings/create-payment-intent` - Create Stripe payment intent
 - `POST /api/webhooks/stripe` - Handle Stripe webhooks
 
@@ -281,24 +296,25 @@ quickshow/
 
 | Variable                 | Description                                            | Required |
 | ------------------------ | ------------------------------------------------------ | -------- |
-| `MONGODB_URI`            | MongoDB connection string                              | ✅        |
-| `CLERK_PUBLISHABLE_KEY`  | Clerk frontend (public) key for user authentication    | ✅        |
-| `CLERK_SECRET_KEY`       | Clerk backend secret key for server‑side auth          | ✅        |
-| `INNGEST_EVENT_KEY`      | Inngest event key for scheduling/triggering jobs       | ✅        |
-| `INNGEST_SIGNING_KEY`    | Inngest signing key to verify incoming events          | ✅        |
-| `TMDB_API_KEY`           | TMDB API key for fetching movie metadata & posters     | ✅        |
-| `STRIPE_PUBLISHABLE_KEY` | Stripe publishable (public) key for frontend payments  | ✅        |
-| `STRIPE_SECRET_KEY`      | Stripe secret key for server‑side payment logic        | ✅        |
-| `STRIPE_WEBHOOK_SECRET`  | Stripe webhook secret for verifying webhook signatures | ✅        |
-| `SENDER_EMAIL`           | “From” email address for transactional emails          | ✅        |
-| `SMTP_USER`              | SMTP username (e.g., SendGrid / Mailgun)               | ✅        |
-| `SMTP_PASS`              | SMTP password / API token                              | ✅        |
+| `MONGODB_URI`            | MongoDB connection string                              | ✅       |
+| `CLERK_PUBLISHABLE_KEY`  | Clerk frontend (public) key for user authentication    | ✅       |
+| `CLERK_SECRET_KEY`       | Clerk backend secret key for server‑side auth          | ✅       |
+| `INNGEST_EVENT_KEY`      | Inngest event key for scheduling/triggering jobs       | ✅       |
+| `INNGEST_SIGNING_KEY`    | Inngest signing key to verify incoming events          | ✅       |
+| `TMDB_API_KEY`           | TMDB API key for fetching movie metadata & posters     | ✅       |
+| `STRIPE_PUBLISHABLE_KEY` | Stripe publishable (public) key for frontend payments  | ✅       |
+| `STRIPE_SECRET_KEY`      | Stripe secret key for server‑side payment logic        | ✅       |
+| `STRIPE_WEBHOOK_SECRET`  | Stripe webhook secret for verifying webhook signatures | ✅       |
+| `SENDER_EMAIL`           | “From” email address for transactional emails          | ✅       |
+| `SMTP_USER`              | SMTP username (e.g., SendGrid / Mailgun)               | ✅       |
+| `SMTP_PASS`              | SMTP password / API token                              | ✅       |
 
 ### Deployment
 
 The application is configured for deployment on Vercel with the included `vercel.json` files.
 
 **Deploy to Vercel:**
+
 ```console
 # Install Vercel CLI
 npm i -g vercel
@@ -335,14 +351,16 @@ This project is licensed under the MIT License. See the [LICENSE](https://github
 
 ## Support
 
-For support, email elyseniyibizi502@gmail.com or create an issue in the GitHub repository.
+For support, email abcd@example.com or create an issue in the GitHub repository.
 
 ---
 
 ## 📞 Contact
+
 For any questions or support, please contact:
+
 - [**NIYIBIZI Elysée**](https://linktr.ee/niyibizi_elysee)👨🏿‍💻 | [Github](https://github.com/elyse502) | [Linkedin](https://www.linkedin.com/in/niyibizi-elys%C3%A9e/) | [Twitter](https://twitter.com/Niyibizi_Elyse).
-- **Email**: <elyseniyibizi502@gmail.com>
+- **Email**: <abcd@example.com>
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/niyibizi-elys%C3%A9e/) [![@phenrysay](https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/Niyibizi_Elyse) [![pH-7](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/elyse502)
 
@@ -355,5 +373,3 @@ For any questions or support, please contact:
 [⬆ Back to Top](#table-of-contents)
 
 </div>
-
-
